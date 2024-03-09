@@ -88,6 +88,7 @@ function SignUpForm({ onSignUp, resetSignUpState }) {
   };
 
   return (
+    <section className="heros">
     <div className="custom-form-container custom-sign-up-container custom-form">
       <form onSubmit={handleOnSubmit}>
         <h1>Create Account</h1>
@@ -129,6 +130,7 @@ function SignUpForm({ onSignUp, resetSignUpState }) {
         <button classname="custom-button2">Sign Up</button>
       </form>
     </div>
+    </section>
   );
 }
 
@@ -136,12 +138,12 @@ export default function App() {
   const [type, setType] = useState("signIn");
 
   const handleSignIn = (email, password) => {
-    alert(`You are login with email: ${email} and password: ${password}`);
+    alert(`You have logged in with email: ${email} and password: ${password}`);
   };
 
   const handleSignUp = (name, email, password, mobile, username) => {
     alert(
-      `You are sign up with name: ${name}, email: ${email}, password: ${password}, mobile: ${mobile}, and username: ${username}`
+      `You have signed up with name: ${name}, email: ${email}, password: ${password}, mobile: ${mobile}, and username: ${username}`
     );
   };
 

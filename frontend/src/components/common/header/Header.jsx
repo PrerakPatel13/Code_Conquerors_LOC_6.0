@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Head from "./Head";
 import "./header.css";
-import SignInForm from "../../login/SignInForm";
 const Header = () => {
   const [click, setClick] = useState(false);
 
@@ -17,19 +16,13 @@ const Header = () => {
             <div className="outer-container">
             <div className="logos">
             <h1 className="title">FlexiLearn</h1> 
-            { <span>Online Education & Learning Platform</span> }
-            {/* <img src='./images/logo.webp' alt="error"></img> */}
-            {/* <h1>FlexiLearn</h1> */}
-            {/* <span>Online Education & Learning Platform</span> */}
+            { <span className="education">Online Education & Learning Platform</span> }
           </div>
-          {/* <li className="abc">
-            FlexiLearn
-          </li> */}
               <li className="xyz">
                 <Link to="/">Home</Link>
               </li>
-              <li className="xyz1">
-                <Link to="/courses">All Courses</Link>
+              <li className="xyz2">
+                <Link to="/courses">Courses</Link>
               </li>
               <li className="xyz1">
                 <Link to="/about">About</Link>
@@ -47,14 +40,13 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
 
+              <Link to="/signedin">
               <button className="login-button">
-                <Link to="/signedin">Sign In</Link>
+                Sign In
               </button>
+              </Link>
             </div>
           </ul>
-          <div className="start">
-            {/* <div className='button'>GET CERTIFICATE</div> */}
-          </div>
           <button className="toggle" onClick={() => setClick(!click)}>
             {click ? <i className="fa fa-times"> </i> : <i className="fa fa-bars"></i>}
           </button>

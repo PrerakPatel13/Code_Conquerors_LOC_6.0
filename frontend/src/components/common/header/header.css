@@ -2,6 +2,7 @@
 header {
   background-color: rgba(255, 255, 255, 0.15);
   margin: 0 0px;
+  overflow-x: hidden;
 }
 
 nav {
@@ -62,13 +63,13 @@ header ul li a:hover {
   background-color: #3498db;
   color: #fff;
   margin-left: 150px;
-  width:100px;
+  width:220px;
 }
 
 .signup-button {
   background-color: #2ecc71;
   color: #fff;
-  margin-right: -300px;
+  margin-right: -240px;
 }
 
 .login-button:hover,
@@ -106,9 +107,18 @@ img {
   font-size: 20px;
 }
 
+.xyz2{
+  font-size: 20px;
+}
+
 .title{
   font-size: 40px;
   color: white;
+}
+
+.education{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
 }
 /*--------header------------*/
 @media screen and (max-width: 768px) {
