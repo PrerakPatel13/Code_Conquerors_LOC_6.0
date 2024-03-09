@@ -1,56 +1,14 @@
-/* styles.css */
-
-/* Updated styles with modified class names */
-
 .custom-app {
   font-family: sans-serif;
   text-align: center;
+  background: linear-gradient(135deg, #003366, #00cc99);
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800"); */
 
-* {
+/* {
   box-sizing: border-box;
-}
-
-.custom-body {
-  background: #f6f5f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  height: 100vh;
-  margin:  0 ;
-}
-
-.custom-heading1 {
-  font-weight: bold;
-  margin: 0;
-}
-
-.custom-heading2 {
-  text-align: center;
-}
-
-.custom-paragraph {
-  font-size: 14px;
-  font-weight: 100;
-  line-height: 20px;
-  letter-spacing: 0.5px;
-  margin: 20px 0 30px;
-}
-
-.custom-span {
-  font-size: 12px;
-}
-
-.custom-link {
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 15px 0;
-}
+} */
 
 .custom-button1 {
   border-radius: 20px;
@@ -75,19 +33,6 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
-}
-
-.custom-button:active {
-  transform: scale(0.95);
-}
-
-.custom-button:focus {
-  outline: none;
-}
-
-.custom-button-ghost {
-  background-color: transparent;
-  border-color: #ffffff;
 }
 
 .custom-form {

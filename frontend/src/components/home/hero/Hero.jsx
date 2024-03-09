@@ -13,9 +13,6 @@ const Hero = () => {
               title="Best Online Education Platform."
             />
             <p>
-              {/* Start, switch, or advance your career with more than 5,000
-              courses, Professional Certificates, and degrees from world-class
-              universities and companies. */}
               Empower your educational journey with FlexiLearn: Where Learning Meets Flexibility, unlocking boundless possibilities in the realm of online education.
             </p>
             <div className="button">

@@ -124,6 +124,7 @@ function SignUpForm({ onSignUp }) {
   };
 
   return (
+    <section className="heros">
     <div className="custom-form-container custom-sign-up-container custom-form">
       <form onSubmit={handleOnSubmit}>
         <h1>Create Account</h1>
@@ -158,6 +159,7 @@ function SignUpForm({ onSignUp }) {
         <button className="custom-button2">Sign Up</button>
       </form>
     </div>
+    </section>
   );
 }
 
