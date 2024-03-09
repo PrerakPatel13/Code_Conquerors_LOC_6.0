@@ -61,7 +61,8 @@ header ul li a:hover {
 .login-button {
   background-color: #3498db;
   color: #fff;
-  margin-left: 100px;
+  margin-left: 150px;
+  width:100px;
 }
 
 .signup-button {

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Head from "./Head";
 import "./header.css";
-
+import SignInForm from "../../login/SignInForm";
 const Header = () => {
   const [click, setClick] = useState(false);
 
@@ -48,10 +48,7 @@ const Header = () => {
               </li>
 
               <button className="login-button">
-                <Link to="/login">Login</Link>
-              </button>
-              <button className="signup-button">
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signedin">Sign In</Link>
               </button>
             </div>
           </ul>
