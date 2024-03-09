@@ -1,32 +1,51 @@
-// App.js
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
-function SignInForm({ onSignIn, resetSignInState }) {
+function SignInForm({ onSignIn }) {
   const [state, setState] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (evt) => {
-    const value = evt.target.value;
+    const { name, value } = evt.target;
     setState({
       ...state,
-      [evt.target.name]: value
+      [name]: value,
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
 
     const { email, password } = state;
-    onSignIn(email, password);
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
+    // Frontend validation
+    if (!email || !password) {
+      toast.error("Email and password are required");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
       });
+
+      const data = await response.json();
+      if (response.ok) {
+        toast.success("Logged in successfully");
+        onSignIn(data.user.email, data.accessToken, data.refreshToken);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.error("Error signing in:", error);
     }
   };
 
@@ -49,41 +68,58 @@ function SignInForm({ onSignIn, resetSignInState }) {
           onChange={handleChange}
         />
         <a href="#">Forgot your password?</a>
-        <br/>
-        <button classname="custom-button1">Sign In</button>
+        <br />
+        <button className="custom-button1">Sign In</button>
       </form>
     </div>
   );
 }
 
-function SignUpForm({ onSignUp, resetSignUpState }) {
+function SignUpForm({ onSignUp }) {
   const [state, setState] = useState({
-    name: "",
+    username: "",
     email: "",
+    fullName: "",
     password: "",
-    mobile: "",
-    username: ""
   });
 
   const handleChange = (evt) => {
-    const value = evt.target.value;
+    const { name, value } = evt.target;
     setState({
       ...state,
-      [evt.target.name]: value
+      [name]: value,
     });
   };
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault();
 
-    const { name, email, password, mobile, username } = state;
-    onSignUp(name, email, password, mobile, username);
+    const { username, email, fullName, password } = state;
 
-    for (const key in state) {
-      setState({
-        ...state,
-        [key]: ""
+    // Frontend validation
+    if (!username || !email || !fullName || !password) {
+      toast.error("All fields are required");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, email, fullName, password }),
       });
+
+      const data = await response.json();
+      if (response.ok) {
+        toast.success("Signed up successfully");
+        onSignUp(data.user.email, data.accessToken, data.refreshToken);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.error("Error signing up:", error);
     }
   };
 
@@ -93,10 +129,10 @@ function SignUpForm({ onSignUp, resetSignUpState }) {
         <h1>Create Account</h1>
         <input
           type="text"
-          name="name"
-          value={state.name}
+          name="username"
+          value={state.username}
           onChange={handleChange}
-          placeholder="Name"
+          placeholder="Username"
         />
         <input
           type="email"
@@ -106,27 +142,20 @@ function SignUpForm({ onSignUp, resetSignUpState }) {
           placeholder="Email"
         />
         <input
+          type="text"
+          name="fullName"
+          value={state.fullName}
+          onChange={handleChange}
+          placeholder="Full Name"
+        />
+        <input
           type="password"
           name="password"
           value={state.password}
           onChange={handleChange}
           placeholder="Password"
         />
-        <input
-          type="text"
-          name="mobile"
-          value={state.mobile}
-          onChange={handleChange}
-          placeholder="Mobile"
-        />
-        <input
-          type="text"
-          name="username"
-          value={state.username}
-          onChange={handleChange}
-          placeholder="Username"
-        />
-        <button classname="custom-button2">Sign Up</button>
+        <button className="custom-button2">Sign Up</button>
       </form>
     </div>
   );
@@ -135,14 +164,12 @@ function SignUpForm({ onSignUp, resetSignUpState }) {
 export default function App() {
   const [type, setType] = useState("signIn");
 
-  const handleSignIn = (email, password) => {
-    alert(`You are login with email: ${email} and password: ${password}`);
+  const handleSignIn = (email, accessToken, refreshToken) => {
+    console.log("Logged in successfully:", email, accessToken, refreshToken);
   };
 
-  const handleSignUp = (name, email, password, mobile, username) => {
-    alert(
-      `You are sign up with name: ${name}, email: ${email}, password: ${password}, mobile: ${mobile}, and username: ${username}`
-    );
+  const handleSignUp = (email, accessToken, refreshToken) => {
+    console.log("Signed up successfully:", email, accessToken, refreshToken);
   };
 
   const handleSwitchForm = (newType) => {
@@ -151,22 +178,39 @@ export default function App() {
 
   return (
     <div className="custom-App">
-      <div className={`custom-container ${type === "signUp" ? "custom-right-panel-active" : ""}`} id="custom-container">
-        <SignUpForm onSignUp={handleSignUp} />
-        <SignInForm onSignIn={handleSignIn} />
+      <ToastContainer />
+      <div
+        className={`custom-container ${
+          type === "signUp" ? "custom-right-panel-active" : ""
+        }`}
+        id="custom-container"
+      >
+        {type === "signUp" ? (
+          <SignUpForm onSignUp={handleSignUp} />
+        ) : (
+          <SignInForm onSignIn={handleSignIn} />
+        )}
         <div className="custom-overlay-container">
           <div className="custom-overlay">
             <div className="custom-overlay-panel custom-overlay-left">
               <h1>Welcome Back!</h1>
               <p>To keep connected with us, please login with your personal info</p>
-              <button className="custom-ghost" id="custom-signIn" onClick={() => handleSwitchForm("signIn")}>
+              <button
+                className="custom-ghost"
+                id="custom-signIn"
+                onClick={() => handleSwitchForm("signIn")}
+              >
                 Sign In
               </button>
             </div>
             <div className="custom-overlay-panel custom-overlay-right">
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start the journey with us</p>
-              <button className="custom-ghost" id="custom-signUp" onClick={() => handleSwitchForm("signUp")}>
+              <button
+                className="custom-ghost"
+                id="custom-signUp"
+                onClick={() => handleSwitchForm("signUp")}
+              >
                 Sign Up
               </button>
             </div>

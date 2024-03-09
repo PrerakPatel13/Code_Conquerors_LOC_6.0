@@ -46,19 +46,19 @@ const registerUser = asyncHandler(async (req, res) => {
   if (existedUser) {
     throw new ApiError(409, "User with username or email already exists !");
   }
-  let avatarLocalPath;
-  if (
-    req.files &&
-    Array.isArray(req.files.avatar) &&
-    req.files.avatar.length > 0
-  ) {
-    avatarLocalPath = req.files.avatar[0].path;
-  } else {
-    throw new ApiError(400, "Avatar file is required");
-  }
+  // let avatarLocalPath;
+  // if (
+  //   req.files &&
+  //   Array.isArray(req.files.avatar) &&
+  //   req.files.avatar.length > 0
+  // ) {
+  //   avatarLocalPath = req.files.avatar[0].path;
+  // } else {
+  //   throw new ApiError(400, "Avatar file is required");
+  // }
 
   // upload to cloudinary
-  const avatar = await uploadOnCloudinary(avatarLocalPath);
+  // const avatar = await uploadOnCloudinary(avatarLocalPath);
   // if (!avatar) {
   //   throw new ApiError(400, "Avatar file is required");
   // }
@@ -69,7 +69,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     fullName,
     password,
-    avatar: { publicId: avatar?.public_id, url: avatar?.url }, // cloudinary url
+    // avatar: { publicId: avatar?.public_id, url: avatar?.url }, // cloudinary url
   });
 
   // check user creation & response
@@ -79,6 +79,7 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering");
   }
+  
 
   return res
     .status(201)
