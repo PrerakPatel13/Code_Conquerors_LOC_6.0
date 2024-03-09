@@ -12,7 +12,7 @@ const HAbout = () => {
           <Heading subtitle='our courses' title='explore our popular online courses' />
 
           <div className='coursesCard'>
-            {/* copy code form  coursesCard */}
+            {/* code form  coursesCard */}
             <div className='grid2'>
               {coursesCard.slice(0, 3).map((val) => (
                 <div className='items'>

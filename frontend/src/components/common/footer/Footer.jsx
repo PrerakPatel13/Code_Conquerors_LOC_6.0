@@ -2,10 +2,17 @@ import React from "react"
 import { blog } from "../../../dummydata"
 import "./footer.css"
 // import { Link } from "react-router-dom"
+import { useState } from "react"
+import Contact from "../../contact/Contact"
+import { useNavigate } from "react-router-dom"
 
 const Footer = () => {
+  const [click, setClick] = useState(false);
+  const navigate=useNavigate()
+
   return (
     <>
+    <br />
       <section className="newletter">
         <div className="container flexSB">
           <div className="left row">
@@ -30,48 +37,26 @@ const Footer = () => {
             <i className="fab fa-twitter icon"></i>
             <i className="fab fa-instagram icon"></i>
           </div>
-          {/* <div className="box link">
-            <h3>Explore</h3>
-            <ul>
-              <li>
-                <Link to='/about'>About Us</Link></li>
-              <li>Services</li>
-              <li>Courses</li>
-              <li>Blog</li>
-              <li>Contact us</li>
-            </ul>
-          </div> */}
           <div className="box link">
             <h3>Quick Links</h3>
             <ul>
-              <li>Contact Us</li>
-              <li>Pricing</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy</li>
-              <li>Feedbacks</li>
-            </ul>
+              {/* <li onClick={()=>{navigate('/contact')}}>Contact Us</li> */}
+              <a href="http://localhost:3000/contact">Contact Us</a>
+              <br />
+              <br />
+              <a href="http://localhost:3000/pricing">Pricing</a>
+              <br />
+              <br />
+              <a href="http://localhost:3000/courses">Our Courses</a>
+              <br />
+              <br />
+              <a href="http://localhost:3000/team">Our Team</a>
+              <br />
+              <br />
+              <a href="http://localhost:3000/">Feedback</a>
+              </ul>
           </div>
-          <div className="box">
-            <h3>Recent Post</h3>
-            {blog.slice(0, 3).map((val) => (
-              <div className="items flexSB">
-                <div className="img">
-                  <img src={val.cover} alt="" />
-                </div>
-                <div className="text">
-                  <span>
-                    <i className="fa fa-calendar-alt"></i>
-                    <label htmlFor="">{val.date}</label>
-                  </span>
-                  <span>
-                    <i className="fa fa-user"></i>
-                    <label htmlFor="">{val.type}</label>
-                  </span>
-                  <h4>{val.title.slice(0, 40)}...</h4>
-                </div>
-              </div>
-            ))}
-          </div>
+          
           <div className="box last">
             <h3>Have a Question?</h3>
             <ul>

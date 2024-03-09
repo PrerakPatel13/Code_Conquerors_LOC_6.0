@@ -9,6 +9,7 @@ import Blog from "./components/blog/Blog";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
+import App1 from "./App1.js";
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
           <Route path="/pricing" element={<Pricing/>} />
           <Route path="/journal" element={<Blog/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/signed" element={<App1/>} />
+          
         </Routes>
+        
         <Footer />
       </Router>
     </>
