@@ -1,6 +1,7 @@
 import React from "react"
 import { blog } from "../../../dummydata"
 import "./footer.css"
+// import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <section className="newletter">
         <div className="container flexSB">
           <div className="left row">
-            <h1>Newsletter - Stay tune and get the latest update</h1>
+            <h1>Newsletter - Stay tuned and get the latest update!</h1>
             <span>Far far away, behind the word mountains</span>
           </div>
           <div className="right row">
@@ -22,25 +23,24 @@ const Footer = () => {
           <div className="box logo">
             <h1>FlexiLearn</h1>
             <span>Online Education & Learning Platform</span>
-            <p>
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia.
-            </p>
+            <br />
+            <br />
 
             <i className="fab fa-facebook-f icon"></i>
             <i className="fab fa-twitter icon"></i>
             <i className="fab fa-instagram icon"></i>
           </div>
-          <div className="box link">
+          {/* <div className="box link">
             <h3>Explore</h3>
             <ul>
-              <li>About Us</li>
+              <li>
+                <Link to='/about'>About Us</Link></li>
               <li>Services</li>
               <li>Courses</li>
               <li>Blog</li>
               <li>Contact us</li>
             </ul>
-          </div>
+          </div> */}
           <div className="box link">
             <h3>Quick Links</h3>
             <ul>
@@ -73,7 +73,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="box last">
-            <h3>Have a Questions?</h3>
+            <h3>Have a Question?</h3>
             <ul>
               <li>
                 <i className="fa fa-map"></i>
@@ -91,9 +91,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      {/* <div className="legal">
-        <p>Thirosh Madhusha Copyright ©2022 All rights reserved.</p>
-      </div> */}
     </>
   );
 }
