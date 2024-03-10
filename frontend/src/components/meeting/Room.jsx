@@ -10,8 +10,8 @@ const Room = () => {
   useEffect(() => {
     const connectToRoom = async () => {
       try {
-        const appID = 1755869289;
-        const serverSecret = "028b26ad67c75d8b4733cf2b0d7394a7";
+        const appID = process.env.REACT_APP_appID;
+        const serverSecret = process.env.REACT_APP_serverSecret;
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, id, Date.now().toString(), "User");
         console.log(appID)
         console.log(serverSecret)
