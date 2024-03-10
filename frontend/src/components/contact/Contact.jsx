@@ -46,7 +46,7 @@ const Contact = () => {
             <div className="items grid2">
               <div className="box">
                 <h4>ADDRESS:</h4>
-                <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                <p>198 West 21th Street, Vile Parle(W), Mumbai</p>
               </div>
               <div className="box">
                 <h4>EMAIL:</h4>

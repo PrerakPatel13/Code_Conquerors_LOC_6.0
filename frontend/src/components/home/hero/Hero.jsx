@@ -1,6 +1,7 @@
-import React from "react"
-import Heading from "../../common/heading/Heading"
-import "./Hero.css"
+import React from "react";
+import Heading from "../../common/heading/Heading";
+import "./Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,15 +17,16 @@ const Hero = () => {
               Empower your educational journey with FlexiLearn: Where Learning Meets Flexibility, unlocking boundless possibilities in the realm of online education.
             </p>
             <div className="button">
-              <button className="primary-btn">
-              <a href="http://localhost:3000/">GET STARTED NOW</a>
-                 <i className="fa fa-long-arrow-alt-right"></i>
-              </button>
-              <button>
-                <a href="http://localhost:3000/courses">
-                VIEW COURSE 
-                </a><i className="fa fa-long-arrow-alt-right"></i>
-              </button>
+              <Link to="/">
+                <button className="primary-btn">
+                  GET STARTED NOW <i className="fa fa-long-arrow-alt-right"></i>
+                </button>
+              </Link>
+              <Link to="/courses">
+                <button>
+                  VIEW COURSE <i className="fa fa-long-arrow-alt-right"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -34,4 +36,4 @@ const Hero = () => {
   );
 }
 
-export default Hero
+export default Hero;
