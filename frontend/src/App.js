@@ -14,7 +14,7 @@ import Meeting from './components/meeting/meeting.jsx';
 import Bot from './Bot.js'
 import NotesApp from "./components/Notesapp.js";
 import Preferences from "./components/Preferences.js";
-
+import Room from "./components/meeting/Room.jsx";
 function App() {
   return (
     <>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/meeting" element={<Meeting/>}/>
           <Route path="/notes" element={<NotesApp/>}/>
           <Route path="/pref" element={<Preferences/>}/>
-
+          <Route path="/room/:id" element={<Room/>}/>
         </Routes>
 
         <Footer />
