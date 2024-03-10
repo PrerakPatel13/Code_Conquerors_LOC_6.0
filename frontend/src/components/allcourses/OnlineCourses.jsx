@@ -23,6 +23,7 @@ const OnlineCourses = () => {
           </div>
         </div>
       </section>
+      
     </>
   )
 }

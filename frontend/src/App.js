@@ -12,6 +12,8 @@ import Home from "./components/home/Home";
 import SignInForm from "./components/login/SignInForm";
 import Meeting from './components/meeting/meeting.jsx';
 import Bot from './Bot.js'
+import NotesApp from "./components/Notesapp.js";
+import Preferences from "./components/Preferences.js";
 
 function App() {
   return (
@@ -29,7 +31,8 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/signedin" element={<SignInForm/>}/>
           <Route path="/meeting" element={<Meeting/>}/>
-          {/* <Route path="/" element={<Bot/>}/> */}
+          <Route path="/notes" element={<NotesApp/>}/>
+          <Route path="/pref" element={<Preferences/>}/>
 
         </Routes>
 

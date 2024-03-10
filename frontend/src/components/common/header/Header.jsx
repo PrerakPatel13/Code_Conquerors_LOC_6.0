@@ -16,7 +16,7 @@ const Header = () => {
             <div className="outer-container">
             <div className="logos">
             <h1 className="title">FlexiLearn</h1> 
-            { <span className="education">Online Education & Learning Platform</span> }
+            {/* { <span className="education">Online Education & Learning Platform</span> } */}
           </div>
               <li className="xyz">
                 <Link to="/">Home</Link>
@@ -40,7 +40,7 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li className="xyz1">
-                <Link to="/meeting">Meeting</Link>
+                <Link to="/meeting">Collab</Link>
               </li>
 
               <Link to="/signedin">
