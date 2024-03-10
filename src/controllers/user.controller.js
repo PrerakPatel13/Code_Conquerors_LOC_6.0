@@ -2,6 +2,7 @@ import validator from "validator";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
+import { StudyGoal } from "../models/studyGoal.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
@@ -79,7 +80,6 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering");
   }
-  
 
   return res
     .status(201)
@@ -143,4 +143,29 @@ const loginUser = asyncHandler(async (req, res) => {
     );
 });
 
-export { registerUser, loginUser };
+const createStudyGoal = asyncHandler(async (req, res) => {
+  const { description } = req.body;
+  try {
+    const newStudyGoal = await StudyGoal.create({
+      description,
+      user: req.user,
+    });
+
+    res.status(201).json({
+      success: true,
+      data: newStudyGoal,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: "Server Error",
+    });
+  }
+});
+
+
+export {
+  registerUser,
+  loginUser,
+  createStudyGoal,
+};

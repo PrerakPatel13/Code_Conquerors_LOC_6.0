@@ -1,16 +1,29 @@
-import React from 'react';
+// ScheduleMeetingButton.jsx
+import React, { useState } from 'react';
 import './ScheduleMeetingButton.css';
+import Room from './Room';
 
-const ScheduleMeetingButton = ({ onClick }) => {
+const ScheduleMeetingButton = () => {
+  const [showRoom, setShowRoom] = useState(false);
+
+  const handleClick = () => {
+    setShowRoom(true);
+  };
+
   return (
-    <>
-    <button className="schedule-button" onClick={onClick}>
-      Schedule a Meeting
-    </button>
-    <br />
-    <br/>
-    </>
-
+    <div>
+      {showRoom ? (
+        <Room />
+      ) : (
+        <>
+          <button className="schedule-button" onClick={handleClick}>
+            Schedule a Meeting
+          </button>
+          <br />
+          <br/>
+        </>
+      )}
+    </div>
   );
 }
 

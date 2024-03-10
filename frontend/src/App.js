@@ -12,7 +12,7 @@ import Home from "./components/home/Home";
 import SignInForm from "./components/login/SignInForm";
 import Meeting from './components/meeting/meeting.jsx';
 import Bot from './Bot.js'
-
+import Room from "./components/meeting/Room.jsx";
 function App() {
   return (
     <>
@@ -29,8 +29,8 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/signedin" element={<SignInForm/>}/>
           <Route path="/meeting" element={<Meeting/>}/>
+          <Route path="/room/:id" element={<Room/>}/>
           {/* <Route path="/" element={<Bot/>}/> */}
-
         </Routes>
 
         <Footer />
