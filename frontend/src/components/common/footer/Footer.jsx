@@ -40,7 +40,6 @@ const Footer = () => {
           <div className="box link">
             <h3>Quick Links</h3>
             <ul>
-              {/* <li onClick={()=>{navigate('/contact')}}>Contact Us</li> */}
               <a href="http://localhost:3000/contact">Contact Us</a>
               <br />
               <br />

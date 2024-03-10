@@ -6,9 +6,10 @@ import OnlineCourses from "./OnlineCourses"
 const CourseHome = () => {
   return (
     <>
-      <Back title='Explore Courses' />
+      <Back className='abc' title='Explore Courses' />
       <CoursesCard />
       <OnlineCourses />
+      
     </>
   )
 }

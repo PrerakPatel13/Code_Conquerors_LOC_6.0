@@ -50,6 +50,7 @@ function SignInForm({ onSignIn }) {
   };
 
   return (
+    <>
     <div className="custom-form-container custom-sign-in-container custom-form">
       <form onSubmit={handleOnSubmit}>
         <h1>Sign in</h1>
@@ -72,6 +73,7 @@ function SignInForm({ onSignIn }) {
         <button className="custom-button1">Sign In</button>
       </form>
     </div>
+    </>
   );
 }
 
@@ -124,6 +126,7 @@ function SignUpForm({ onSignUp }) {
   };
 
   return (
+    <>
     <section className="heros">
     <div className="custom-form-container custom-sign-up-container custom-form">
       <form onSubmit={handleOnSubmit}>
@@ -160,6 +163,7 @@ function SignUpForm({ onSignUp }) {
       </form>
     </div>
     </section>
+    </>
   );
 }
 
@@ -179,6 +183,9 @@ export default function App() {
   };
 
   return (
+    <>
+    <br/>
+    <br/>
     <div className="custom-App">
       <ToastContainer />
       <div
@@ -220,5 +227,6 @@ export default function App() {
         </div>
       </div>
     </div>
+    </>
   );
 }

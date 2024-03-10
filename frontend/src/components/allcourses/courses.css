@@ -70,6 +70,10 @@
   padding: 30px 20px;
   transition: 0.5s;
 }
+
+.abc{
+  margin-left: -200px;
+}
 .online .img {
   width: 80px;
   height: 80px;
@@ -111,6 +115,10 @@
 }
 .online .box:hover h1 {
   color: #fff;
+}
+
+.explore{
+  margin-left: -1000px;
 }
 /*-------------online---------*/
 @media screen and (max-width: 768px) {

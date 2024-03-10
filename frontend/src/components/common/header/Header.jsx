@@ -39,6 +39,9 @@ const Header = () => {
               <li className="xyz1">
                 <Link to="/contact">Contact</Link>
               </li>
+              <li className="xyz1">
+                <Link to="/meeting">Meeting</Link>
+              </li>
 
               <Link to="/signedin">
               <button className="login-button">

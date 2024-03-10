@@ -10,6 +10,9 @@ import Contact from "./components/contact/Contact";
 import Footer from "./components/common/footer/Footer";
 import Home from "./components/home/Home";
 import SignInForm from "./components/login/SignInForm";
+import Meeting from './components/meeting/meeting.jsx';
+import Bot from './Bot.js'
+
 function App() {
   return (
     <>
@@ -17,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/bot" element={<Bot/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/courses" element={<CourseHome/>} />
           <Route path="/team" element={<Team/>} />
@@ -24,9 +28,11 @@ function App() {
           <Route path="/journal" element={<Blog/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/signedin" element={<SignInForm/>}/>
+          <Route path="/meeting" element={<Meeting/>}/>
+          {/* <Route path="/" element={<Bot/>}/> */}
 
         </Routes>
-        
+
         <Footer />
       </Router>
     </>

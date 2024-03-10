@@ -19,6 +19,8 @@ header li {
 header ul {
   padding: 30px 214px;
   width: auto; /* Adjust width according to content */
+background-image: url('../../../../public/images/back3.webp');
+background-size: 1900px 300px;
 
 }
 
@@ -63,7 +65,7 @@ header ul li a:hover {
   background-color: #3498db;
   color: #fff;
   margin-left: 150px;
-  width:220px;
+  width:150px;
 }
 
 .signup-button {
