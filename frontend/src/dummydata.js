@@ -245,45 +245,26 @@ export const online = [
 ]
 export const team = [
   {
-    cover: "./images/team/t1.webp",
-    name: "Ph.D Adrian Molises",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
+    cover: "./images/team/rohila.webp",
+    name: "Aditya Rohila",
+    work: "BACKEND DEVELOPER",
   },
   {
-    cover: "./images/team/t2.webp",
-    name: "Ph.D Arthur MaGregor",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
+    cover: "./images/team/sahil.webp",
+    name: "Sahil Singh",
+    work: "FRONTEND DEVELOPER",
   },
   {
-    cover: "./images/team/t3.webp",
-    name: "Ph.D Anna Hanzen",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
+    cover: "./images/team/rohan.webp",
+    name: "Rohan Kini",
+    work: "ML DEVELOPER",
   },
   {
-    cover: "./images/team/t4.webp",
-    name: "Ph.D Brian Wooden",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
+    cover: "./images/team/prerak.webp",
+    name: "Prerak Patel",
+    work: "FULLSTACK DEVELOPER",
   },
-  {
-    cover: "./images/team/t5.webp",
-    name: "Ph.D Adrian Molises",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
-  },
-  {
-    cover: "./images/team/t6.webp",
-    name: "Ph.D Arthur MaGregor",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
-  },
-  {
-    cover: "./images/team/t7.webp",
-    name: "Ph.D Anna Hanzen",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
-  },
-  {
-    cover: "./images/team/t8.webp",
-    name: "Ph.D Brian Wooden",
-    work: "DEVELOPER AND LEAD INSTRUCTOR",
-  },
+  
 ]
 export const price = [
   {

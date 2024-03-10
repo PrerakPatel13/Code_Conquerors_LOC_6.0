@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 function SignInForm({ onSignIn }) {
   const [state, setState] = useState({
@@ -209,7 +210,9 @@ export default function App() {
                 id="custom-signIn"
                 onClick={() => handleSwitchForm("signIn")}
               >
+                <Link to="./pref">
                 Sign In
+                </Link>
               </button>
             </div>
             <div className="custom-overlay-panel custom-overlay-right">

@@ -11,19 +11,20 @@ const ScheduleMeetingButton = () => {
   };
 
   return (
-    <div>
-      {showRoom ? (
-        <Room />
-      ) : (
-        <>
-          <button className="schedule-button" onClick={handleClick}>
-            Schedule a Meeting
-          </button>
-          <br />
-          <br/>
-        </>
-      )}
-    </div>
+    <>
+    <br />
+    <br />
+    <br />
+    <button className="schedule-button" onClick={onClick}>
+      Schedule <br/> Meeting
+    </button>
+    <button className="schedule-button" onClick={onClick}>
+      Chat
+    </button>
+    <br />
+    <br/>
+    </>
+
   );
 }
 
