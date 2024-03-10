@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignInForm({ onSignIn }) {
   const [state, setState] = useState({
     email: "",
     password: "",
   });
-
+  const navigate=useNavigate();
   const handleChange = (evt) => {
     const { name, value } = evt.target;
     setState({
@@ -41,6 +41,7 @@ function SignInForm({ onSignIn }) {
       const data = await response.json();
       if (response.ok) {
         toast.success("Logged in successfully");
+        navigate('/pref')
         onSignIn(data.user.email, data.accessToken, data.refreshToken);
       } else {
         toast.error(data.message);
@@ -210,7 +211,7 @@ export default function App() {
                 id="custom-signIn"
                 onClick={() => handleSwitchForm("signIn")}
               >
-                <Link to="./pref">
+                <Link to="/pref">
                 Sign In
                 </Link>
               </button>
